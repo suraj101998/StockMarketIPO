@@ -1,16 +1,18 @@
 # Stock Market Forecast App
 
-This is a fully functional, responsice stock market dasboard web and mobile application using react and react native. It is an interactive platform for users to view and analyze real-time stock market data.
+This is a fully functional, responsice stock market dasboard web and mobile application using react and react native. It is an interactive platform for users to view and analyze upcoming IPO Calendar and the latest currency exchange rates.
 
 ## Features
 
-user Authentication: Login and Register functionality.
-Real-time Stock Data: Displays real-time data using external APIs
-Customizable Dashboard: allow users to remove or rearrange widgets
-search and filter: Functionality to search and sort stocks
-Mobile Responsiveness: seamless mobile experience using react native
-User setting: theme toggles- light or dark, notification settings- enable or disable
-Performance Optimization: Efficient state management and API calls.
+1. user Authentication: Login and Register functionality.
+2. Upcoming IPO Data: Displays Upcoming IPOs using external APIs
+3. Currency Exchange Rates: Displays the latest currency rates using external APIs
+4. Customizable Dashboard: allow users to remove or rearrange IPOs
+5. search and filter: Functionality to search and sort IPOs
+6. Data Refresh: refresh the data on user request.
+7. Mobile Responsiveness: seamless mobile experience using react native
+8. User setting: theme toggles- light or dark, notification settings- enable or disable
+9. Performance Optimization: Efficient state management and API calls.
 
 
 ## Getting Started
@@ -37,11 +39,11 @@ Developed By Suraj Chakraborty
 
 ## Github
 
-available at : https://github.com/suraj101998/stock-market-dashboard
-to clone: git clone https://github.com/suraj101998/stock-market-dashboard
+available at : https://github.com/suraj101998/StockMarketIPO.git
+to clone: git clone https://github.com/suraj101998/StockMarketIPO.git
 
 ## Authentication:
 for login
     username: surajchakraborty82@gmail.com
     password: Suraj@101998
-API Key: pk_7d8247a072f140c784a0f0d4e7b46837 (valid for 7 days)
+API Key: pk_c7e22b8275ea47ee995f065c95948a3c (valid for 7 days)
