@@ -3,30 +3,39 @@ import { render, fireEvent } from '@testing-library/react-native';
 import StockWidget from './StockWidget';
 
 describe('<StockWidget />', () => {
-  const stockData = {
-    symbol: 'AAPL',
-    latestPrice: 150.0,
+  const mockIPO = {
+    symbol: 'ABC',
+    companyName: 'Example Company',
+    shares: 100,
   };
 
-  test('renders stock widget correctly', () => {
-    const { getByText, getByTestId } = render(
-      <StockWidget stock={stockData} isSelected={false} handleWidgetSelection={() => {}} />
+  it('renders StockWidget component', () => {
+    const { getByText } = render(
+      <StockWidget ipo={mockIPO} isSelected={false} handleIPOSelection={jest.fn()} />
     );
-
-    expect(getByText('AAPL')).toBeTruthy();
-    expect(getByText('Last Price: $150.00')).toBeTruthy();
-    expect(getByTestId('stock-widget')).toBeTruthy();
+    expect(getByText('Example Company')).toBeTruthy();
+    expect(getByText('Shares: 100')).toBeTruthy();
   });
 
-  test('handles widget selection', () => {
-    const handleWidgetSelectionMock = jest.fn();
-    const { getByTestId } = render(
-      <StockWidget stock={stockData} isSelected={false} handleWidgetSelection={handleWidgetSelectionMock} />
+  it('handles IPO selection when not selected', () => {
+    const handleIPOSelection = jest.fn();
+    const { getByText } = render(
+      <StockWidget ipo={mockIPO} isSelected={false} handleIPOSelection={handleIPOSelection} />
     );
 
-    fireEvent.press(getByTestId('stock-widget'));
-    expect(handleWidgetSelectionMock).toHaveBeenCalledWith('AAPL');
+    fireEvent.press(getByText('Example Company'));
+    expect(handleIPOSelection).toHaveBeenCalledWith('ABC');
   });
 
-  // Add more tests based on your component behavior
+  it('handles IPO selection when already selected', () => {
+    const handleIPOSelection = jest.fn();
+    const { getByText } = render(
+      <StockWidget ipo={mockIPO} isSelected={true} handleIPOSelection={handleIPOSelection} />
+    );
+
+    fireEvent.press(getByText('Example Company'));
+    expect(handleIPOSelection).toHaveBeenCalledWith('ABC');
+  });
+
+  // Add more test cases as needed for different scenarios
 });
